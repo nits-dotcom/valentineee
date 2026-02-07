@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Aloo 💖</title>
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(#ff9aa2, #ffd6e0);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #8b0000;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  color: #c70039;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  margin: 25px auto;
+  border-radius: 25px;
+  max-width: 850px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 12px 28px;
+  background: #ff004f;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  background: #b30000;
+}
+
+img, video {
+  width: 220px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  color: red;
+  font-size: 20px;
+  animation: floatUp 6s infinite ease-in;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+
+<script>
+function acceptLove() {
+  alert("YOU SAID YES 😭💖 I LOVE YOU FOREVER, ALOO!");
+}
+
+function quizResult() {
+  alert("Correct 💘 You're MY SOULMATE!");
+}
+
+function revealSecret() {
+  document.getElementById("secret").style.display = "block";
+}
+
+/* Floating hearts */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 25 + 15 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 350);
+</script>
+</head>
+
+<body>
+
+<!-- Proposal -->
+<div class="card">
+  <h1>💖 Will You Be My Valentine, Aloo? 💖</h1>
+  <p>(Saying YES means forever 😌❤️)</p>
+  <button onclick="acceptLove()">YES 💘</button>
+  <button onclick="alert('Wrong answer 😤 Try again')">NO ❌</button>
+</div>
+
+<!-- Emotional Letter -->
+<div class="card">
+  <h2>💌 A Letter From My Heart</h2>
+  <p>
+    Dear Aloo 💕<br><br>
+    You are my comfort, my happiness, and my favorite part of every day.  
+    You turned ordinary moments into memories and silence into laughter.  
+    Loving you feels like home.  
+    <br><br>
+    If I get to choose forever — I choose YOU 💖  
+  </p>
+</div>
+
+<!-- How I Met Aloo -->
+<div class="card">
+  <h2>💞 How I Met Aloo — My Miracle</h2>
+  <p>
+    I met Aloo on a day when I was struggling more than I ever admit out loud.  
+    I wasn’t okay — and I didn’t expect anything from that day.  
+    <br><br>
+    But then there was you.  
+    A simple conversation.  
+    The way you listened without judging me.  
+    The way you comforted me when I needed it most.  
+    <br><br>
+    You helped me feel understood, safe, and stronger again.  
+    You reminded me that healing is possible, and that I wasn’t alone.  
+    <br><br>
+    I didn’t just meet a person —  
+    I met my soul,  
+    my home,  
+    my safe place,  
+    my best decision,  
+    my best and perfect man.  
+    <br><br>
+    Meeting you felt destined.  
+    Loving you is my choice — and that choice is forever 💖  
+  </p>
+</div>
+
+<!-- Photos -->
+<div class="card">
+  <h2>📸 Our Memories</h2>
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+  <p>(Replace with your real photos)</p>
+</div>
+
+<!-- Videos -->
+<div class="card">
+  <h2>🎥 Our Videos</h2>
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- Love Quiz -->
+<div class="card">
+  <h2>💘 Love Quiz</h2>
+  <p>Who loves Aloo the most?</p>
+  <button onclick="quizResult()">Me 💖</button>
+  <button onclick="quizResult()">ME FOREVER 💕</button>
+</div>
+
+<!-- Timeline -->
+<div class="card">
+  <h2>🕰️ Our Timeline</h2>
+  <p>💗 The Day I Met You — My favorite miracle</p>
+  <p>💗 First Laugh Together — My favorite sound</p>
+  <p>💗 Summer Holidays — Missing you</p>
+  <p>💗 The Day I Realized I Can’t Live Without You</p>
+  <p>💗 Today — Still choosing you</p>
+  <p>💗 Forever — With Aloo 💍</p>
+</div>
+
+<!-- Spicy Page -->
+<div class="card">
+  <h2>🔥 A Little Spicy for Aloo</h2>
+  <p>
+    Aloo…  
+    you are dangerously attractive,  
+    illegally charming,  
+    and fully responsible  
+    for my heartbeat going wild 😏🔥  
+    <br><br>
+    You’re my favorite temptation  
+    and my sweetest trouble ❤️  
+  </p>
+</div>
+
+<!-- Secret Message -->
+<div class="card">
+  <h2>🔐 Secret Message</h2>
+  <button onclick="revealSecret()">Unlock 💌</button>
+  <p id="secret" style="display:none;">
+    Aloo… if love had a face, it would look like you.  
+    You are my dream, my peace, and my forever 😭💖  
+  </p>
+</div>
+
+<!-- Final Words -->
+<div class="card">
+  <h2>💞 Final Note</h2>
+  <p>
+    Aloo,  
+    thank you for entering my life,  
+    staying in it,  
+    and becoming my forever Valentine 💘  
+  </p>
+</div>
+
+</body>
+</html>
