@@ -86,7 +86,7 @@ img, video {
   font-size: 18px;
 }
 
-/* 💍 RING ANIMATION */
+/* 💍 Ring Animation */
 .ring {
   font-size: 90px;
   animation: pulse 1.4s infinite;
@@ -120,40 +120,43 @@ document.addEventListener("click", () => {
   <button onclick="nextSlide()">Start ▶</button>
 </div>
 
-<!-- 💘 VALENTINE -->
+<!-- 💘 VALENTINE QUESTION -->
 <div class="slide">
   <h1 class="glow">Will you be my Valentine, Aloo? 💘</h1>
-  <button onclick="goToSlide(2)">Yes 💖</button>
+  <button onclick="nextSlide()">Yes 💖</button>
   <button onclick="goToSlide(3)">No 😤</button>
 </div>
 
-<!-- YES -->
+<!-- 💞 YES RESPONSE -->
 <div class="slide">
   <h2>You just made me the happiest person alive 💞</h2>
+  <p>This journey continues because you said YES 💖</p>
   <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- FUNNY NO -->
+<!-- 🧸 TEDDY HEARTBREAK (ONLY FOR NO) -->
 <div class="slide">
-  <h2>Teddy heartbreak 😭🧸</h2>
+  <h2>Teddy Heartbreak 😭🧸</h2>
   <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-  <button onclick="goToSlide(1)">Try Again 😌</button>
+  <p>You broke teddy’s heart 💔</p>
+  <button onclick="goToSlide(1)">Go Back 💘</button>
 </div>
 
-<!-- STORY -->
+<!-- 💕 STORY -->
 <div class="slide">
   <h2 class="glow">Extrovert girl × Quiet introvert boy 💕</h2>
+  <p>You make me feel safe, loved, and at home.</p>
   <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- TIMELINE -->
+<!-- 📖 TIMELINE -->
 <div class="slide">
   <h2 class="glow">Our Love Timeline 💌</h2>
   <div class="timeline">
     <div class="event">📚 Class 11 — loud girl meets silent boy</div>
     <div class="event">💞 Tuition teasing & secret smiles</div>
     <div class="event">🌧 Rainy day memories</div>
-    <div class="event">📖 Love letters in notebooks</div>
+    <div class="event">📖 Letters in notebooks</div>
     <div class="event">🏀 Basketball & captain days</div>
     <div class="event">🎓 Farewell promises</div>
     <div class="event">💔 Long distance — same hearts</div>
@@ -195,7 +198,7 @@ document.addEventListener("click", () => {
   <h2 class="glow">Aloo… This Will Make You Blush 🔥😈</h2>
   <p style="max-width:750px;margin:auto;line-height:1.7;">
     You don’t just live in my heart — you live in my imagination.  
-    The way you look at me makes my heartbeat lose control.  
+    The way you look at me makes my heartbeat misbehave.  
     You make me crave your presence…  
     My sweetest temptation… my favorite secret…  
     My most beautiful weakness. 💋🔥  
@@ -207,7 +210,7 @@ document.addEventListener("click", () => {
 <div class="slide">
   <h2 class="glow">Spicy Love Quiz for Aloo 💞😈</h2>
 
-  <p>Where did our love story begin?</p>
+  <p>Where did our love begin?</p>
   <button onclick="quizAnswer(true)">Class 11 💕</button>
   <button onclick="quizAnswer(false)">Random Chat 😆</button>
 
@@ -227,12 +230,12 @@ document.addEventListener("click", () => {
   <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- 💍 MARRY ME ANIMATION -->
+<!-- 💍 MARRY ME -->
 <div class="slide">
   <h1 class="glow">Aloo… Will You Marry Me? 💍</h1>
   <div class="ring">💍</div>
   <p style="font-size:20px; max-width:700px; margin:auto;">
-    You are my safe place, my best friend, my home, my forever.  
+    You are my safe place, my heart, my forever.  
     I don’t want a future without you.  
     Choose me — today, tomorrow, and always. 💖
   </p>
@@ -271,10 +274,10 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 6000);
 }, 260);
 
-/* QUIZ RESULT */
+/* QUIZ */
 function quizAnswer(correct) {
   document.getElementById("quizResult").innerText =
-    correct ? "Correct 😏 You know us too well 💖" : "Wrong 😤 But I still want you";
+    correct ? "Correct 😏 You know us too well 💖" : "Wrong 😤 But I still love you";
 }
 
 /* VOICE RECORDER */
