@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Aloo 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #120014, #2b001f);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  color: pink;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+@keyframes floatUp {
+  from { transform: translateY(100vh); opacity: 1; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #ff9ad5;
+}
+
+button {
+  background: hotpink;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.gallery img, video {
+  width: 90%;
+  max-width: 450px;
+  border-radius: 12px;
+  margin: 12px 0;
+}
+
+.timeline {
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
+.event {
+  margin: 20px 0;
+  padding-left: 15px;
+  border-left: 3px solid pink;
+}
+
+.hidden { display:none; }
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 BACKGROUND MUSIC -->
+<audio autoplay loop>
+  <source src="othaiyadi.mp3" type="audio/mp3">
+</audio>
+
+<!-- Floating Hearts -->
+<script>
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 250);
+</script>
+
+<!-- PAGE 1 -->
+<section>
+<h1>Will you be my Valentine, Aloo? 💌</h1>
+<p>You are my heart, my home, my favorite forever.</p>
+<button onclick="document.getElementById('story').scrollIntoView()">Yes 💖</button>
+</section>
+
+<!-- PAGE 2: STORY -->
+<section id="story">
+<h2>How I Met You 💞</h2>
+<p style="max-width:720px; margin:auto; font-size:18px; line-height:1.7;">
+I met you on a day when I felt like giving up on life.  
+A simple conversation with you brought me back to feeling alive.  
+The way you comforted me, listened to me, and reminded me I mattered — it healed me deeply.
+
+You never judged me.  
+You became my safe place.  
+My calm. My comfort. My best decision.
+
+Then summer came… and I realized I couldn’t live without you.  
+I didn’t just meet a person — I met my soul, my home, my forever.
+
+Meeting you felt destined.  
+Loving you is my choice.  
+And that choice will always be forever.
+</p>
+</section>
+
+<!-- PAGE 3: TIMELINE -->
+<section>
+<h2>Our Timeline 🥺💖</h2>
+<div class="timeline">
+  <div class="event">✨ The day we first talked</div>
+  <div class="event">🌸 The day you saved my heart</div>
+  <div class="event"☀️ Summer — when I fell for you</div>
+  <div class="event">💞 The moment I knew you're my forever</div>
+</div>
+</section>
+
+<!-- PAGE 4: LOVE QUIZ -->
+<section>
+<h2>Love Quiz 💘</h2>
+<p>Who loves Aloo more?</p>
+<button onclick="alert('ME. ALWAYS. FOREVER 💖')">Me</button>
+<button onclick="alert('Wrong. It’s still me 😌💞')">You</button>
+</section>
+
+<!-- PAGE 5: YOUR GALLERY -->
+<section>
+<h2>Our Memories 📸🎥</h2>
+
+<div class="gallery">
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+
+  <video controls>
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+
+  <video controls>
+    <source src="video2.mp4" type="video/mp4">
+  </video>
+</div>
+</section>
+
+<!-- PAGE 6: HOT SECRET -->
+<section>
+<h2>Secret For Aloo 🔥</h2>
+<button onclick="document.getElementById('spicy').style.display='block'">
+Unlock 😳
+</button>
+
+<div id="spicy" class="hidden">
+<p style="max-width:650px; margin:auto; font-size:18px; margin-top:20px;">
+Aloo…  
+You’re not just my love — you’re my craving, my favorite temptation, my midnight thought.  
+The way you exist drives me insane in the best way.  
+I want your presence, your closeness, your warmth.  
+You own my heart… and my desire.  
+And I’d choose you in every lifetime. 🔥
+</p>
+</div>
+</section>
+
+<!-- PAGE 7: MARRY ME -->
+<section>
+<h1>Aloo… Will You Marry Me? 💍</h1>
+<p style="font-size:18px; max-width:650px; margin:auto;">
+You are my best decision, my home, my future, my forever.  
+I don’t want a lifetime without you.  
+I want every tomorrow with you.  
+Be mine — forever.
+</p>
+
+<button onclick="alert('She said YES 💖💍')">Yes Forever 💞</button>
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aloo 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slide.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+p {
+  font-size: 1.2em;
+  max-width: 700px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background: hotpink;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active">
+  <h1>Hey Aloo 🥔💖</h1>
+  <p>This website is made only for you.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+  <h1>How I Feel About You 🥹</h1>
+  <p>You are not just special. You are my comfort, my happiness, and my favorite person.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+  <h1>Our Story 💫</h1>
+  <p>From the moment we started talking… something felt different.  
+  And every day since then, you’ve meant more.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+  <h1>Why You’re Special 💕</h1>
+  <p>Your smile, your vibe, your heart…  
+  everything about you feels like home.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 5 (Spicy 🌶) -->
+<div class="slide">
+  <h1>Spicy Thoughts About You 🌶🔥</h1>
+  <p>
+  You drive me crazy in the best way.  
+  The way you talk… the way you exist… dangerously attractive 😌  
+  Aloo, you’re my favorite temptation.
+  </p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 6 (Voice Message 🎤) -->
+<div class="slide">
+  <h1>Send a Voice Message to Aloo 🎧💌</h1>
+  <p>Record something sweet, emotional, or naughty 😏</p>
+
+  <button onclick="startRecording()">🎤 Start Recording</button>
+  <button onclick="stopRecording()">⏹ Stop Recording</button>
+
+  <p id="status"></p>
+  <audio id="audioPlayback" controls></audio>
+
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+  <h1>Final Message 💖</h1>
+  <p>
+  Aloo, this website is just a small proof  
+  of how much you mean to me.  
+  You are unforgettable.
+  </p>
+  <button onclick="nextSlide()">One Last Slide ➜</button>
+</div>
+
+<!-- Slide 8 -->
+<div class="slide">
+  <h1>I Choose You, Aloo  ❤️</h1>
+  <p>
+  Not just today.  
+  Not just for fun.  
+  But always — in my own way.
+  </p>
+  <button onclick="restart()">Replay 💞</button>
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function nextSlide() {
+  slides[index].classList.remove('active');
+  index++;
+  if (index >= slides.length) index = slides.length - 1;
+  slides[index].classList.add('active');
+}
+
+function restart() {
+  slides[index].classList.remove('active');
+  index = 0;
+  slides[index].classList.add('active');
+}
+
+// Voice Recorder
+let recorder;
+let audioChunks = [];
+
+async function startRecording() {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  recorder = new MediaRecorder(stream);
+  audioChunks = [];
+
+  recorder.ondataavailable = e => audioChunks.push(e.data);
+  recorder.start();
+
+  document.getElementById("status").innerText = "Recording... 🎙";
+}
+
+function stopRecording() {
+  recorder.stop();
+
+  recorder.onstop = () => {
+    const blob = new Blob(audioChunks, { type: 'audio/webm' });
+    const audioUrl = URL.createObjectURL(blob);
+    document.getElementById("audioPlayback").src = audioUrl;
+
+    document.getElementById("status").innerText = "Voice ready for Aloo 💌";
+  };
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aloo 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slide.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+p {
+  font-size: 1.2em;
+  max-width: 700px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background: hotpink;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active">
+  <h1>Hey Aloo 🥔💖</h1>
+  <p>This website is made only for you.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+  <h1>How I Feel About You 🥹</h1>
+  <p>You are not just special. You are my comfort, my happiness, and my favorite person.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+  <h1>Our Story 💫</h1>
+  <p>From the moment we started talking… something felt different.  
+  And every day since then, you’ve meant more.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+  <h1>Why You’re Special 💕</h1>
+  <p>Your smile, your vibe, your heart…  
+  everything about you feels like home.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 5 (Spicy 🌶) -->
+<div class="slide">
+  <h1>Spicy Thoughts About You 🌶🔥</h1>
+  <p>
+  You drive me crazy in the best way.  
+  The way you talk… the way you exist… dangerously attractive 😌  
+  Aloo, you’re my favorite temptation.
+  </p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 6 (Voice Message 🎤) -->
+<div class="slide">
+  <h1>Send a Voice Message to Aloo 🎧💌</h1>
+  <p>Record something sweet, emotional, or naughty 😏</p>
+
+  <button onclick="startRecording()">🎤 Start Recording</button>
+  <button onclick="stopRecording()">⏹ Stop Recording</button>
+
+  <p id="status"></p>
+  <audio id="audioPlayback" controls></audio>
+
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+  <h1>Final Message 💖</h1>
+  <p>
+  Aloo, this website is just a small proof  
+  of how much you mean to me.  
+  You are unforgettable.
+  </p>
+  <button onclick="nextSlide()">One Last Slide ➜</button>
+</div>
+
+<!-- Slide 8 -->
+<div class="slide">
+  <h1>I Choose You, Aloo  ❤️</h1>
+  <p>
+  Not just today.  
+  Not just for fun.  
+  But always — in my own way.
+  </p>
+  <button onclick="restart()">Replay 💞</button>
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function nextSlide() {
+  slides[index].classList.remove('active');
+  index++;
+  if (index >= slides.length) index = slides.length - 1;
+  slides[index].classList.add('active');
+}
+
+function restart() {
+  slides[index].classList.remove('active');
+  index = 0;
+  slides[index].classList.add('active');
+}
+
+// Voice Recorder
+let recorder;
+let audioChunks = [];
+
+async function startRecording() {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  recorder = new MediaRecorder(stream);
+  audioChunks = [];
+
+  recorder.ondataavailable = e => audioChunks.push(e.data);
+  recorder.start();
+
+  document.getElementById("status").innerText = "Recording... 🎙";
+}
+
+function stopRecording() {
+  recorder.stop();
+
+  recorder.onstop = () => {
+    const blob = new Blob(audioChunks, { type: 'audio/webm' });
+    const audioUrl = URL.createObjectURL(blob);
+    document.getElementById("audioPlayback").src = audioUrl;
+
+    document.getElementById("status").innerText = "Voice ready for Aloo 💌";
+  };
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aloo 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slide.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+p {
+  font-size: 1.2em;
+  max-width: 700px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background: hotpink;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active">
+  <h1>Hey Aloo 🥔💖</h1>
+  <p>This website is made only for you.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+  <h1>How I Feel About You 🥹</h1>
+  <p>You are not just special. You are my comfort, my happiness, and my favorite person.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+  <h1>Our Story 💫</h1>
+  <p>From the moment we started talking… something felt different.  
+  And every day since then, you’ve meant more.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+  <h1>Why You’re Special 💕</h1>
+  <p>Your smile, your vibe, your heart…  
+  everything about you feels like home.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 5 (Spicy 🌶) -->
+<div class="slide">
+  <h1>Spicy Thoughts About You 🌶🔥</h1>
+  <p>
+  You drive me crazy in the best way.  
+  The way you talk… the way you exist… dangerously attractive 😌  
+  Aloo, you’re my favorite temptation.
+  </p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 6 (Voice Message 🎤) -->
+<div class="slide">
+  <h1>Send a Voice Message to Aloo 🎧💌</h1>
+  <p>Record something sweet, emotional, or naughty 😏</p>
+
+  <button onclick="startRecording()">🎤 Start Recording</button>
+  <button onclick="stopRecording()">⏹ Stop Recording</button>
+
+  <p id="status"></p>
+  <audio id="audioPlayback" controls></audio>
+
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+  <h1>Final Message 💖</h1>
+  <p>
+  Aloo, this website is just a small proof  
+  of how much you mean to me.  
+  You are unforgettable.
+  </p>
+  <button onclick="nextSlide()">One Last Slide ➜</button>
+</div>
+
+<!-- Slide 8 -->
+<div class="slide">
+  <h1>I Choose You, Aloo  ❤️</h1>
+  <p>
+  Not just today.  
+  Not just for fun.  
+  But always — in my own way.
+  </p>
+  <button onclick="restart()">Replay 💞</button>
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function nextSlide() {
+  slides[index].classList.remove('active');
+  index++;
+  if (index >= slides.length) index = slides.length - 1;
+  slides[index].classList.add('active');
+}
+
+function restart() {
+  slides[index].classList.remove('active');
+  index = 0;
+  slides[index].classList.add('active');
+}
+
+// Voice Recorder
+let recorder;
+let audioChunks = [];
+
+async function startRecording() {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  recorder = new MediaRecorder(stream);
+  audioChunks = [];
+
+  recorder.ondataavailable = e => audioChunks.push(e.data);
+  recorder.start();
+
+  document.getElementById("status").innerText = "Recording... 🎙";
+}
+
+function stopRecording() {
+  recorder.stop();
+
+  recorder.onstop = () => {
+    const blob = new Blob(audioChunks, { type: 'audio/webm' });
+    const audioUrl = URL.createObjectURL(blob);
+    document.getElementById("audioPlayback").src = audioUrl;
+
+    document.getElementById("status").innerText = "Voice ready for Aloo 💌";
+  };
+}
+</script>
+
+</body>
+</html>
