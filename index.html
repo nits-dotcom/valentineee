@@ -1,176 +1,173 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Aloo 💖</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Aloo 💖</title>
+<meta charset="UTF-8">
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: black;
+  background: url('https://i.imgur.com/9aK7R6k.png') repeat, linear-gradient(135deg, #ff5fa2, #ffb3d9);
+  background-size: 200px;
   color: white;
-  overflow: hidden;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 .slide {
   display: none;
-  height: 100vh;
-  padding: 40px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  min-height: 100vh;
+  padding: 60px 20px;
 }
 
-.slide.active {
-  display: flex;
-}
-
-h1 {
-  font-size: 2.4em;
-}
-
-p {
-  font-size: 1.2em;
-  max-width: 700px;
+.active {
+  display: block;
 }
 
 button {
-  margin-top: 25px;
-  padding: 12px 25px;
+  background: white;
+  color: hotpink;
   border: none;
-  border-radius: 20px;
-  background: hotpink;
-  color: white;
-  font-size: 16px;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-size: 18px;
   cursor: pointer;
+}
+
+img, video {
+  max-width: 80%;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 22px;
+  animation: float 6s infinite;
+  color: pink;
+}
+
+@keyframes float {
+  0% {transform: translateY(0); opacity: 1;}
+  100% {transform: translateY(-100vh); opacity: 0;}
+}
+
+/* Timeline */
+.timeline {
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+}
+
+.event {
+  background: rgba(255,255,255,0.15);
+  margin: 15px 0;
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-size: 18px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 <!-- Slide 1 -->
 <div class="slide active">
-  <h1>Hey Aloo 🥔💖</h1>
-  <p>This website is made only for you.</p>
-  <button onclick="nextSlide()">Next ➜</button>
+  <h1>Will you be my Valentine, Aloo? 💘</h1>
+  <button onclick="nextSlide()">Yes 💖</button>
 </div>
 
 <!-- Slide 2 -->
 <div class="slide">
-  <h1>How I Feel About You 🥹</h1>
-  <p>You are not just special. You are my comfort, my happiness, and my favorite person.</p>
+  <h2>An extrovert girl fell for a quiet introvert boy 💞</h2>
+  <p>You make me feel safe, loved, cared for — the most beautiful soul I’ve ever known.</p>
   <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- Slide 3 -->
+<!-- Slide 3 — Timeline Love Story -->
 <div class="slide">
-  <h1>Our Story 💫</h1>
-  <p>From the moment we started talking… something felt different.  
-  And every day since then, you’ve meant more.</p>
+  <h2>Our Love Story Timeline 💌</h2>
+  <div class="timeline">
+
+    <div class="event">📚 We met in Class 11 — loud girl meets silent boy.</div>
+    <div class="event">💞 You made me feel safe, loved, and understood.</div>
+    <div class="event">🏫 Our tuition classes… stolen kisses & soft moments.</div>
+    <div class="event">😝 Me teasing you between classes.</div>
+    <div class="event">🌧 The rainy day we’ll never forget.</div>
+    <div class="event">📖 Our letter copies & memories in notebooks.</div>
+    <div class="event">🏀 Me wearing shorts for basketball, you cheering silently.</div>
+    <div class="event">🏆 Our sport captaincies — proud of us.</div>
+    <div class="event">🎓 Our farewell — hearts heavy but full.</div>
+    <div class="event">💔 Losing distance — but never losing love.</div>
+
+  </div>
   <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- Slide 4 -->
+<!-- Slide 4 — Photos -->
 <div class="slide">
-  <h1>Why You’re Special 💕</h1>
-  <p>Your smile, your vibe, your heart…  
-  everything about you feels like home.</p>
+  <h2>Our Memories 📸</h2>
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
   <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- Slide 5 (Spicy 🌶) -->
+<!-- Slide 5 — Videos -->
 <div class="slide">
-  <h1>Spicy Thoughts About You 🌶🔥</h1>
+  <h2>Our Videos 🎥</h2>
+  <video controls>
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 6 — Emotional How I Met You -->
+<div class="slide">
+  <h2>How I Met You 💖</h2>
   <p>
-  You drive me crazy in the best way.  
-  The way you talk… the way you exist… dangerously attractive 😌  
-  Aloo, you’re my favorite temptation.
+  I met you on a day when I felt like giving up on life.  
+  A simple conversation brought me back to light.  
+  You healed me without judgment.  
+  I didn’t just meet a person — I met my soul, my home, my safe place.  
+  Loving you is my forever choice.
   </p>
   <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- Slide 6 (Voice Message 🎤) -->
+<!-- Slide 7 — Final -->
 <div class="slide">
-  <h1>Send a Voice Message to Aloo 🎧💌</h1>
-  <p>Record something sweet, emotional, or naughty 😏</p>
-
-  <button onclick="startRecording()">🎤 Start Recording</button>
-  <button onclick="stopRecording()">⏹ Stop Recording</button>
-
-  <p id="status"></p>
-  <audio id="audioPlayback" controls></audio>
-
-  <button onclick="nextSlide()">Next ➜</button>
-</div>
-
-<!-- Slide 7 -->
-<div class="slide">
-  <h1>Final Message 💖</h1>
-  <p>
-  Aloo, this website is just a small proof  
-  of how much you mean to me.  
-  You are unforgettable.
-  </p>
-  <button onclick="nextSlide()">One Last Slide ➜</button>
-</div>
-
-<!-- Slide 8 -->
-<div class="slide">
-  <h1>I Choose You, Aloo �❤️</h1>
-  <p>
-  Not just today.  
-  Not just for fun.  
-  But always — in my own way.
-  </p>
-  <button onclick="restart()">Replay 💞</button>
+  <h1>I Love You Aloo 🥔💖</h1>
+  <p>You are my heart, my peace, my forever.</p>
 </div>
 
 <script>
-let slides = document.querySelectorAll('.slide');
-let index = 0;
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
 
 function nextSlide() {
-  slides[index].classList.remove('active');
-  index++;
-  if (index >= slides.length) index = slides.length - 1;
-  slides[index].classList.add('active');
+  slides[slideIndex].classList.remove("active");
+  slideIndex++;
+  slides[slideIndex].classList.add("active");
 }
 
-function restart() {
-  slides[index].classList.remove('active');
-  index = 0;
-  slides[index].classList.add('active');
-}
-
-// Voice Recorder
-let recorder;
-let audioChunks = [];
-
-async function startRecording() {
-  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  recorder = new MediaRecorder(stream);
-  audioChunks = [];
-
-  recorder.ondataavailable = e => audioChunks.push(e.data);
-  recorder.start();
-
-  document.getElementById("status").innerText = "Recording... 🎙";
-}
-
-function stopRecording() {
-  recorder.stop();
-
-  recorder.onstop = () => {
-    const blob = new Blob(audioChunks, { type: 'audio/webm' });
-    const audioUrl = URL.createObjectURL(blob);
-    document.getElementById("audioPlayback").src = audioUrl;
-
-    document.getElementById("status").innerText = "Voice ready for Aloo 💌";
-  };
-}
+// Floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 300);
 </script>
 
 </body>
