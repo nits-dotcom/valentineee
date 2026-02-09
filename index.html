@@ -1,215 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For Aloo 💖</title>
+<title>Aloo 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body {
   margin: 0;
-  background: linear-gradient(#ff9aa2, #ffd6e0);
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  padding: 40px;
   text-align: center;
-  color: #8b0000;
-  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-h1, h2 {
-  color: #c70039;
+.slide.active {
+  display: flex;
 }
 
-.card {
-  background: white;
-  padding: 25px;
-  margin: 25px auto;
-  border-radius: 25px;
-  max-width: 850px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+h1 {
+  font-size: 2.4em;
+}
+
+p {
+  font-size: 1.2em;
+  max-width: 700px;
 }
 
 button {
-  padding: 12px 28px;
-  background: #ff004f;
-  color: white;
+  margin-top: 25px;
+  padding: 12px 25px;
   border: none;
-  border-radius: 30px;
-  font-size: 18px;
+  border-radius: 20px;
+  background: hotpink;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  margin: 10px;
-}
-
-button:hover {
-  background: #b30000;
-}
-
-img, video {
-  width: 220px;
-  border-radius: 15px;
-  margin: 10px;
-}
-
-/* Floating hearts */
-.heart {
-  position: fixed;
-  color: red;
-  font-size: 20px;
-  animation: floatUp 6s infinite ease-in;
-  opacity: 0.7;
-}
-
-@keyframes floatUp {
-  0% { transform: translateY(100vh); opacity: 1; }
-  100% { transform: translateY(-10vh); opacity: 0; }
 }
 </style>
-
-<script>
-function acceptLove() {
-  alert("YOU SAID YES 😭💖 I LOVE YOU FOREVER, ALOO!");
-}
-
-function quizResult() {
-  alert("Correct 💘 You're MY SOULMATE!");
-}
-
-function revealSecret() {
-  document.getElementById("secret").style.display = "block";
-}
-
-/* Floating hearts */
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 25 + 15 + "px";
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 6000);
-}, 350);
-</script>
 </head>
 
 <body>
 
-<!-- Proposal -->
-<div class="card">
-  <h1>💖 Will You Be My Valentine, Aloo? 💖</h1>
-  <p>(Saying YES means forever 😌❤️)</p>
-  <button onclick="acceptLove()">YES 💘</button>
-  <button onclick="alert('Wrong answer 😤 Try again')">NO ❌</button>
+<!-- Slide 1 -->
+<div class="slide active">
+  <h1>Hey Aloo 🥔💖</h1>
+  <p>This website is made only for you.</p>
+  <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- Emotional Letter -->
-<div class="card">
-  <h2>💌 A Letter From My Heart</h2>
+<!-- Slide 2 -->
+<div class="slide">
+  <h1>How I Feel About You 🥹</h1>
+  <p>You are not just special. You are my comfort, my happiness, and my favorite person.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+  <h1>Our Story 💫</h1>
+  <p>From the moment we started talking… something felt different.  
+  And every day since then, you’ve meant more.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+  <h1>Why You’re Special 💕</h1>
+  <p>Your smile, your vibe, your heart…  
+  everything about you feels like home.</p>
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 5 (Spicy 🌶) -->
+<div class="slide">
+  <h1>Spicy Thoughts About You 🌶🔥</h1>
   <p>
-    Dear Aloo 💕<br><br>
-    You are my comfort, my happiness, and my favorite part of every day.  
-    You turned ordinary moments into memories and silence into laughter.  
-    Loving you feels like home.  
-    <br><br>
-    If I get to choose forever — I choose YOU 💖  
+  You drive me crazy in the best way.  
+  The way you talk… the way you exist… dangerously attractive 😌  
+  Aloo, you’re my favorite temptation.
   </p>
+  <button onclick="nextSlide()">Next ➜</button>
 </div>
 
-<!-- How I Met Aloo -->
-<div class="card">
-  <h2>💞 How I Met Aloo — My Miracle</h2>
+<!-- Slide 6 (Voice Message 🎤) -->
+<div class="slide">
+  <h1>Send a Voice Message to Aloo 🎧💌</h1>
+  <p>Record something sweet, emotional, or naughty 😏</p>
+
+  <button onclick="startRecording()">🎤 Start Recording</button>
+  <button onclick="stopRecording()">⏹ Stop Recording</button>
+
+  <p id="status"></p>
+  <audio id="audioPlayback" controls></audio>
+
+  <button onclick="nextSlide()">Next ➜</button>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+  <h1>Final Message 💖</h1>
   <p>
-    I met Aloo on a day when I was struggling more than I ever admit out loud.  
-    I wasn’t okay — and I didn’t expect anything from that day.  
-    <br><br>
-    But then there was you.  
-    A simple conversation.  
-    The way you listened without judging me.  
-    The way you comforted me when I needed it most.  
-    <br><br>
-    You helped me feel understood, safe, and stronger again.  
-    You reminded me that healing is possible, and that I wasn’t alone.  
-    <br><br>
-    I didn’t just meet a person —  
-    I met my soul,  
-    my home,  
-    my safe place,  
-    my best decision,  
-    my best and perfect man.  
-    <br><br>
-    Meeting you felt destined.  
-    Loving you is my choice — and that choice is forever 💖  
+  Aloo, this website is just a small proof  
+  of how much you mean to me.  
+  You are unforgettable.
   </p>
+  <button onclick="nextSlide()">One Last Slide ➜</button>
 </div>
 
-<!-- Photos -->
-<div class="card">
-  <h2>📸 Our Memories</h2>
-  <img src="photo1.jpg">
-  <img src="photo2.jpg">
-  <img src="photo3.jpg">
-  <p>(Replace with your real photos)</p>
-</div>
-
-<!-- Videos -->
-<div class="card">
-  <h2>🎥 Our Videos</h2>
-  <video controls>
-    <source src="video.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Love Quiz -->
-<div class="card">
-  <h2>💘 Love Quiz</h2>
-  <p>Who loves Aloo the most?</p>
-  <button onclick="quizResult()">Me 💖</button>
-  <button onclick="quizResult()">ME FOREVER 💕</button>
-</div>
-
-<!-- Timeline -->
-<div class="card">
-  <h2>🕰️ Our Timeline</h2>
-  <p>💗 The Day I Met You — My favorite miracle</p>
-  <p>💗 First Laugh Together — My favorite sound</p>
-  <p>💗 Summer Holidays — Missing you</p>
-  <p>💗 The Day I Realized I Can’t Live Without You</p>
-  <p>💗 Today — Still choosing you</p>
-  <p>💗 Forever — With Aloo 💍</p>
-</div>
-
-<!-- Spicy Page -->
-<div class="card">
-  <h2>🔥 A Little Spicy for Aloo</h2>
+<!-- Slide 8 -->
+<div class="slide">
+  <h1>I Choose You, Aloo �❤️</h1>
   <p>
-    Aloo…  
-    you are dangerously attractive,  
-    illegally charming,  
-    and fully responsible  
-    for my heartbeat going wild 😏🔥  
-    <br><br>
-    You’re my favorite temptation  
-    and my sweetest trouble ❤️  
+  Not just today.  
+  Not just for fun.  
+  But always — in my own way.
   </p>
+  <button onclick="restart()">Replay 💞</button>
 </div>
 
-<!-- Secret Message -->
-<div class="card">
-  <h2>🔐 Secret Message</h2>
-  <button onclick="revealSecret()">Unlock 💌</button>
-  <p id="secret" style="display:none;">
-    Aloo… if love had a face, it would look like you.  
-    You are my dream, my peace, and my forever 😭💖  
-  </p>
-</div>
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
 
-<!-- Final Words -->
-<div class="card">
-  <h2>💞 Final Note</h2>
-  <p>
-    Aloo,  
-    thank you for entering my life,  
-    staying in it,  
-    and becoming my forever Valentine 💘  
-  </p>
-</div>
+function nextSlide() {
+  slides[index].classList.remove('active');
+  index++;
+  if (index >= slides.length) index = slides.length - 1;
+  slides[index].classList.add('active');
+}
+
+function restart() {
+  slides[index].classList.remove('active');
+  index = 0;
+  slides[index].classList.add('active');
+}
+
+// Voice Recorder
+let recorder;
+let audioChunks = [];
+
+async function startRecording() {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  recorder = new MediaRecorder(stream);
+  audioChunks = [];
+
+  recorder.ondataavailable = e => audioChunks.push(e.data);
+  recorder.start();
+
+  document.getElementById("status").innerText = "Recording... 🎙";
+}
+
+function stopRecording() {
+  recorder.stop();
+
+  recorder.onstop = () => {
+    const blob = new Blob(audioChunks, { type: 'audio/webm' });
+    const audioUrl = URL.createObjectURL(blob);
+    document.getElementById("audioPlayback").src = audioUrl;
+
+    document.getElementById("status").innerText = "Voice ready for Aloo 💌";
+  };
+}
+</script>
 
 </body>
 </html>
