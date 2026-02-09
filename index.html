@@ -86,7 +86,6 @@ img, video {
   font-size: 18px;
 }
 
-/* 💍 Ring Animation */
 .ring {
   font-size: 90px;
   animation: pulse 1.4s infinite;
@@ -102,7 +101,7 @@ img, video {
 
 <body>
 
-<!-- 🎵 MUSIC -->
+<!-- 🎵 BACKGROUND MUSIC -->
 <audio id="bgmusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -110,7 +109,7 @@ img, video {
 <script>
 document.addEventListener("click", () => {
   document.getElementById("bgmusic").play();
-});
+}, { once:true });
 </script>
 
 <!-- 🎬 INTRO -->
@@ -120,18 +119,11 @@ document.addEventListener("click", () => {
   <button onclick="nextSlide()">Start ▶</button>
 </div>
 
-<!-- 💘 VALENTINE QUESTION -->
+<!-- 💘 VALENTINE -->
 <div class="slide">
   <h1 class="glow">Will you be my Valentine, Aloo? 💘</h1>
-  <button onclick="nextSlide()">Yes 💖</button>
+  <button onclick="goToSlide(4)">Yes 💖</button>
   <button onclick="goToSlide(3)">No 😤</button>
-</div>
-
-<!-- 💞 YES RESPONSE -->
-<div class="slide">
-  <h2>You just made me the happiest person alive 💞</h2>
-  <p>This journey continues because you said YES 💖</p>
-  <button onclick="nextSlide()">Next ➜</button>
 </div>
 
 <!-- 🧸 TEDDY HEARTBREAK (ONLY FOR NO) -->
@@ -140,6 +132,13 @@ document.addEventListener("click", () => {
   <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
   <p>You broke teddy’s heart 💔</p>
   <button onclick="goToSlide(1)">Go Back 💘</button>
+</div>
+
+<!-- 💞 YES CONFIRM -->
+<div class="slide">
+  <h2>You chose love 💞</h2>
+  <p>Now our story continues forever…</p>
+  <button onclick="nextSlide()">Next ➜</button>
 </div>
 
 <!-- 💕 STORY -->
@@ -195,7 +194,7 @@ document.addEventListener("click", () => {
 
 <!-- 🔥 SPICY BLUSH -->
 <div class="slide">
-  <h2 class="glow">Aloo… This Will Make You Blush 🔥😈</h2>
+  <h2 class="glow">Aloo… You Make Me Lose Control 🔥😈</h2>
   <p style="max-width:750px;margin:auto;line-height:1.7;">
     You don’t just live in my heart — you live in my imagination.  
     The way you look at me makes my heartbeat misbehave.  
@@ -208,7 +207,7 @@ document.addEventListener("click", () => {
 
 <!-- 💘 LOVE QUIZ -->
 <div class="slide">
-  <h2 class="glow">Spicy Love Quiz for Aloo 💞😈</h2>
+  <h2 class="glow">Spicy Love Quiz 😏💞</h2>
 
   <p>Where did our love begin?</p>
   <button onclick="quizAnswer(true)">Class 11 💕</button>
@@ -235,9 +234,9 @@ document.addEventListener("click", () => {
   <h1 class="glow">Aloo… Will You Marry Me? 💍</h1>
   <div class="ring">💍</div>
   <p style="font-size:20px; max-width:700px; margin:auto;">
-    You are my safe place, my heart, my forever.  
+    You are my heart, my home, my forever.  
     I don’t want a future without you.  
-    Choose me — today, tomorrow, and always. 💖
+    Choose me — always. 💖
   </p>
   <button onclick="restart()">Replay Our Love Story 🎬</button>
 </div>
@@ -264,7 +263,6 @@ function goToSlide(num) {
   slides[slideIndex].classList.add("active");
 }
 
-/* FLOATING HEARTS */
 setInterval(() => {
   let heart = document.createElement("div");
   heart.className = "heart";
@@ -274,33 +272,14 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 6000);
 }, 260);
 
-/* QUIZ */
 function quizAnswer(correct) {
   document.getElementById("quizResult").innerText =
     correct ? "Correct 😏 You know us too well 💖" : "Wrong 😤 But I still love you";
 }
 
-/* VOICE RECORDER */
+/* VOICE */
 let recorder, audioChunks = [];
 
 async function startRecording() {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  recorder = new MediaRecorder(stream);
-  audioChunks = [];
-  recorder.ondataavailable = e => audioChunks.push(e.data);
-  recorder.start();
-  document.getElementById("status").innerText = "Recording...";
-}
-
-function stopRecording() {
-  recorder.stop();
-  recorder.onstop = () => {
-    const blob = new Blob(audioChunks, { type: 'audio/webm' });
-    document.getElementById("audioPlayback").src = URL.createObjectURL(blob);
-    document.getElementById("status").innerText = "Saved for Aloo 💌";
-  };
-}
-</script>
-
-</body>
-</html>
+  recor
