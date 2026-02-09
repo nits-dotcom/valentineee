@@ -1,285 +1,234 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For Aloo 💖</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<title>Aloo 💖 My Valentine</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle, #ff4f9a, #13001f);
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(#ffb6c1, #ff69b4);
+  overflow: hidden;
 }
 
 .slide {
   display: none;
-  min-height: 100vh;
-  padding: 70px 20px;
-  animation: fadeIn 1.2s ease;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  padding: 40px;
+  color: white;
 }
 
 .active { display: block; }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 button {
-  background: linear-gradient(45deg, #ff66b2, #ff99cc);
-  color: white;
+  padding: 14px 30px;
   border: none;
-  padding: 14px 28px;
   border-radius: 30px;
   font-size: 18px;
+  background: hotpink;
+  color: white;
   cursor: pointer;
-  margin: 12px;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px hotpink;
-}
-
-img, video {
-  max-width: 85%;
-  border-radius: 20px;
   margin-top: 20px;
-  box-shadow: 0 0 25px rgba(255,255,255,0.5);
-}
-
-.glow {
-  text-shadow: 0 0 10px hotpink, 0 0 25px pink;
 }
 
 .heart {
   position: fixed;
-  bottom: -20px;
-  font-size: 24px;
-  animation: float 6s infinite;
-  color: pink;
+  bottom: -10px;
+  font-size: 25px;
+  animation: float 6s linear;
 }
 
 @keyframes float {
-  0% {transform: translateY(0); opacity: 1;}
-  100% {transform: translateY(-100vh); opacity: 0;}
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
 }
 
-.timeline {
-  max-width: 900px;
-  margin: auto;
-  text-align: left;
-}
-
-.event {
-  background: rgba(255,255,255,0.18);
-  margin: 14px 0;
-  padding: 15px 18px;
-  border-radius: 15px;
-  font-size: 18px;
-}
-
-.ring {
-  font-size: 90px;
-  animation: pulse 1.4s infinite;
-}
-
-@keyframes pulse {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.2);}
-  100% {transform: scale(1);}
+img, video {
+  max-width: 80%;
+  border-radius: 20px;
+  margin-top: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 BACKGROUND MUSIC -->
+<!-- 🎵 MUSIC -->
 <audio id="bgmusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
+<source src="music.mp3" type="audio/mp3">
 </audio>
 
-<script>
-document.addEventListener("click", () => {
-  document.getElementById("bgmusic").play();
-}, { once:true });
-</script>
-
-<!-- 🎬 INTRO -->
+<!-- 💘 SLIDE 1 -->
 <div class="slide active">
-  <h1 class="glow">🎬 A Cinematic Love Story</h1>
-  <h2>Starring… Aloo 💖</h2>
-  <button onclick="nextSlide()">Start ▶</button>
+<h1>💖 Will you be my Valentine, Aloo?</h1>
+<button onclick="goToSlide(2)">YES 💘</button>
+<button onclick="goToSlide(1)">NO 💔</button>
 </div>
 
-<!-- 💘 VALENTINE -->
+<!-- 💔 NO TEDDY -->
 <div class="slide">
-  <h1 class="glow">Will you be my Valentine, Aloo? 💘</h1>
-  <button onclick="goToSlide(4)">Yes 💖</button>
-  <button onclick="goToSlide(3)">No 😤</button>
+<h1>😭 Teddy is Heartbroken</h1>
+<p>You broke Teddy’s heart… go back 💔</p>
+<img src="teddy.png">
+<br><button onclick="goToSlide(0)">Go Back</button>
 </div>
 
-<!-- 🧸 TEDDY HEARTBREAK (ONLY FOR NO) -->
+<!-- 💕 YES PATH -->
 <div class="slide">
-  <h2>Teddy Heartbreak 😭🧸</h2>
-  <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-  <p>You broke teddy’s heart 💔</p>
-  <button onclick="goToSlide(1)">Go Back 💘</button>
+<h1>Aloo… You said YES 🥹💖</h1>
+<p>You are my soulmate, my home, my safe place.</p>
+<button onclick="nextSlide()">Next 💞</button>
 </div>
 
-<!-- 💞 YES CONFIRM -->
+<!-- 💌 HOW YOU MET -->
 <div class="slide">
-  <h2>You chose love 💞</h2>
-  <p>Now our story continues forever…</p>
-  <button onclick="nextSlide()">Next ➜</button>
+<h1>How I Met You 💌</h1>
+<p>
+I met you on a day when I felt like ending my life.  
+You comforted me. You healed me.  
+I didn’t just meet a person… I met my soul, my home, my forever.  
+Meeting you was destiny. Loving you is my choice — forever.
+</p>
+<button onclick="nextSlide()">Next ➤</button>
 </div>
 
-<!-- 💕 STORY -->
+<!-- 🕰️ TIMELINE -->
 <div class="slide">
-  <h2 class="glow">Extrovert girl × Quiet introvert boy 💕</h2>
-  <p>You make me feel safe, loved, and at home.</p>
-  <button onclick="nextSlide()">Next ➜</button>
+<h1>Our Love Story Timeline 🕰️</h1>
+<p>
+📚 Class 11 — Extrovert girl & Quiet introvert boy  
+💋 Tuition kisses  
+🌧 Rainy day memories  
+🏀 Basketball captain days  
+💌 Letters & teasing  
+🎓 Farewell  
+💞 Long-distance love  
+</p>
+<button onclick="nextSlide()">Next ➤</button>
 </div>
 
-<!-- 📖 TIMELINE -->
+<!-- 🖼️ PHOTO SLIDE -->
 <div class="slide">
-  <h2 class="glow">Our Love Timeline 💌</h2>
-  <div class="timeline">
-    <div class="event">📚 Class 11 — loud girl meets silent boy</div>
-    <div class="event">💞 Tuition teasing & secret smiles</div>
-    <div class="event">🌧 Rainy day memories</div>
-    <div class="event">📖 Letters in notebooks</div>
-    <div class="event">🏀 Basketball & captain days</div>
-    <div class="event">🎓 Farewell promises</div>
-    <div class="event">💔 Long distance — same hearts</div>
-  </div>
-  <button onclick="nextSlide()">Next ➜</button>
+<h1>Our Memories 📸</h1>
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<button onclick="nextSlide()">Next ➤</button>
 </div>
 
-<!-- 📸 PHOTOS -->
+<!-- 🎥 VIDEO -->
 <div class="slide">
-  <h2 class="glow">Our Memories 📸</h2>
-  <img src="photo1.jpg">
-  <img src="photo2.jpg">
-  <img src="photo3.jpg">
-  <img src="photo4.jpg">
-  <img src="photo5.jpg">
-  <button onclick="nextSlide()">Next ➜</button>
+<h1>Our Videos 🎬</h1>
+<video controls src="video1.mp4"></video>
+<video controls src="video2.mp4"></video>
+<button onclick="nextSlide()">Next ➤</button>
 </div>
 
-<!-- 🎥 VIDEOS -->
+<!-- 🎙️ VOICE MESSAGE -->
 <div class="slide">
-  <h2 class="glow">Our Videos 🎥</h2>
-  <video controls><source src="video1.mp4"></video>
-  <video controls><source src="video2.mp4"></video>
-  <button onclick="nextSlide()">Next ➜</button>
+<h1>Voice Message for Aloo 🎙️</h1>
+<p id="status"></p>
+<button onclick="startRecording()">Start Recording</button>
+<button onclick="stopRecording()">Stop</button>
+<audio id="audioPlayback" controls></audio>
+<button onclick="nextSlide()">Next ➤</button>
 </div>
 
-<!-- 🎙 VOICE -->
+<!-- 💖 LOVE QUIZ -->
 <div class="slide">
-  <h2 class="glow">Voice Message for Aloo 🎙</h2>
-  <button onclick="startRecording()">Start 🎤</button>
-  <button onclick="stopRecording()">Stop ⏹</button>
-  <p id="status"></p>
-  <audio id="audioPlayback" controls></audio>
-  <button onclick="nextSlide()">Next ➜</button>
+<h1>Love Quiz 💘</h1>
+<p>Who fell in love first?</p>
+<button onclick="quizAnswer(true)">You 😘</button>
+<button onclick="quizAnswer(false)">Me 😜</button>
+<p id="quizResult"></p>
+<button onclick="nextSlide()">Next ➤</button>
 </div>
 
-<!-- 🔥 SPICY BLUSH -->
+<!-- 🔥 SPICY SECRET -->
 <div class="slide">
-  <h2 class="glow">Aloo… You Make Me Lose Control 🔥😈</h2>
-  <p style="max-width:750px;margin:auto;line-height:1.7;">
-    You don’t just live in my heart — you live in my imagination.  
-    The way you look at me makes my heartbeat misbehave.  
-    You make me crave your presence…  
-    My sweetest temptation… my favorite secret…  
-    My most beautiful weakness. 💋🔥  
-  </p>
-  <button onclick="nextSlide()">Next ➜</button>
-</div>
-
-<!-- 💘 LOVE QUIZ -->
-<div class="slide">
-  <h2 class="glow">Spicy Love Quiz 😏💞</h2>
-
-  <p>Where did our love begin?</p>
-  <button onclick="quizAnswer(true)">Class 11 💕</button>
-  <button onclick="quizAnswer(false)">Random Chat 😆</button>
-
-  <p>Who fell harder?</p>
-  <button onclick="quizAnswer(true)">You 😏</button>
-  <button onclick="quizAnswer(false)">Me 😌</button>
-
-  <p>What do I crave most?</p>
-  <button onclick="quizAnswer(true)">You 💋</button>
-  <button onclick="quizAnswer(false)">Sleep 😴</button>
-
-  <p>Who owns my heart?</p>
-  <button onclick="quizAnswer(true)">Aloo 💖</button>
-  <button onclick="quizAnswer(false)">Nobody 😤</button>
-
-  <p id="quizResult"></p>
-  <button onclick="nextSlide()">Next ➜</button>
+<h1>🔥 Secret For You</h1>
+<p>
+Aloo… you drive me crazy.  
+Your smile melts me.  
+I crave you more every day 😈💋  
+</p>
+<button onclick="nextSlide()">Next ➤</button>
 </div>
 
 <!-- 💍 MARRY ME -->
 <div class="slide">
-  <h1 class="glow">Aloo… Will You Marry Me? 💍</h1>
-  <div class="ring">💍</div>
-  <p style="font-size:20px; max-width:700px; margin:auto;">
-    You are my heart, my home, my forever.  
-    I don’t want a future without you.  
-    Choose me — always. 💖
-  </p>
-  <button onclick="restart()">Replay Our Love Story 🎬</button>
+<h1>💍 Will You Marry Me, Aloo?</h1>
+<p>You are my forever. My best decision. My perfect man.</p>
+<button onclick="restart()">Replay 💖</button>
 </div>
 
+<!-- 💖 SCRIPT -->
 <script>
 let slides = document.querySelectorAll(".slide");
 let slideIndex = 0;
 
-function nextSlide() {
-  slides[slideIndex].classList.remove("active");
-  slideIndex++;
+function showSlide(i) {
+  slides.forEach(s => s.classList.remove("active"));
+  slideIndex = i;
   slides[slideIndex].classList.add("active");
+}
+
+function nextSlide() {
+  if (slideIndex < slides.length - 1) showSlide(slideIndex + 1);
 }
 
 function restart() {
-  slides[slideIndex].classList.remove("active");
-  slideIndex = 0;
-  slides[slideIndex].classList.add("active");
+  showSlide(0);
 }
 
-function goToSlide(num) {
-  slides[slideIndex].classList.remove("active");
-  slideIndex = num;
-  slides[slideIndex].classList.add("active");
+function goToSlide(n) {
+  showSlide(n);
 }
 
+/* 🎵 MUSIC */
+document.addEventListener("click", () => {
+  let music = document.getElementById("bgmusic");
+  if (music.paused) music.play();
+}, { once: true });
+
+/* 💖 HEARTS */
 setInterval(() => {
-  let heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 260);
+  let h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "💖";
+  h.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 6000);
+}, 250);
 
+/* 💘 QUIZ */
 function quizAnswer(correct) {
   document.getElementById("quizResult").innerText =
     correct ? "Correct 😏 You know us too well 💖" : "Wrong 😤 But I still love you";
 }
 
-/* VOICE */
+/* 🎙️ VOICE */
 let recorder, audioChunks = [];
 
 async function startRecording() {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  recor
+  recorder = new MediaRecorder(stream);
+  audioChunks = [];
+  recorder.ondataavailable = e => audioChunks.push(e.data);
+  recorder.start();
+  document.getElementById("status").innerText = "Recording...";
+}
+
+function stopRecording() {
+  recorder.stop();
+  recorder.onstop = () => {
+    const blob = new Blob(audioChunks, { type: 'audio/webm' });
+    document.getElementById("audioPlayback").src = URL.createObjectURL(blob);
+    document.getElementById("status").innerText = "Saved for Aloo 💌";
+  };
+}
+</script>
+
+</body>
+</html>
